@@ -2,7 +2,7 @@
 Simple  and Minimal Javascript  Framework
 # How to use
 ### Input Verification
-> Email Verification
+> Example : Email Verification
 ```html
 <!--- include javascript file --->
 <head>
@@ -20,6 +20,17 @@ alert("error please enter a correct email !!");
 
 ```
 
+```javascript 
+let isValidEmail = $.reg.isEmail("email@gmail.com");
+let isValidPhone = $.reg.isPhone("0612345678");
+let isCodePostal = $.reg.isCodePostal("23456");
+
+}
+
+```
+
+
+### available functions 
 <table>
   <tr>
     <th>function</th>
@@ -29,4 +40,14 @@ alert("error please enter a correct email !!");
     <td>isEmail</td>
     <td>verify that email is correct </td>
   </tr>
+    <tr>
+    <td>isPhone</td>
+    <td>verify that the phone number is correct </td>
+  </tr>
+   <tr>
+    <td>isCodePostal</td>
+    <td>verify that the postal code is correct </td>
+  </tr>
+  
+  
   </table>
