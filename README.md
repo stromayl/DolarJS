@@ -1,8 +1,8 @@
 # DolarJS
 Simple  and Minimal Javascript  Framework
 # How to use
-### TEST
-> Input Verification
+### Input Verification
+> Email Verification
 ```html
 <!--- include javascript file --->
 <head>
@@ -19,3 +19,8 @@ alert("error please enter a correct email !!");
 }
 
 ```
+
+<ul>
+  <li>isEmail</li>
+  <li>isPhone</li>
+</ul>
