@@ -20,7 +20,13 @@ alert("error please enter a correct email !!");
 
 ```
 
-<ul>
-  <li>isEmail</li>
-  <li>isPhone</li>
-</ul>
+<table>
+  <tr>
+    <th>function</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td>isEmail</td>
+    <td>verify that email is correct </td>
+  </tr>
+  </table>
