@@ -43,13 +43,11 @@ alert("error please enter a correct email !!");
 
 ```
 
+> Using other functions :
 ```javascript 
 let isValidEmail = $.reg.isEmail("email@gmail.com");
 let isValidPhone = $.reg.isPhone("0612345678");
 let isCodePostal = $.reg.isCodePostal("23456");
-
-}
-
 ```
 
 
