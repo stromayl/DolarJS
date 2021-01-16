@@ -1,7 +1,30 @@
 # DolarJS
 Simple  and Minimal Javascript  Framework
 # How to use
-### Input Verification
+## Input Verification
+
+### available verification functions 
+<table>
+  <tr>
+    <th>function</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td>isEmail</td>
+    <td>verify that email is correct </td>
+  </tr>
+    <tr>
+    <td>isPhone</td>
+    <td>verify that the phone number is correct </td>
+  </tr>
+   <tr>
+    <td>isCodePostal</td>
+    <td>verify that the postal code is correct </td>
+  </tr>
+  
+  
+  </table>
+
 > Example : Email Verification
 ```html
 <!--- include javascript file --->
@@ -30,24 +53,3 @@ let isCodePostal = $.reg.isCodePostal("23456");
 ```
 
 
-### available functions 
-<table>
-  <tr>
-    <th>function</th>
-    <th>description</th>
-  </tr>
-  <tr>
-    <td>isEmail</td>
-    <td>verify that email is correct </td>
-  </tr>
-    <tr>
-    <td>isPhone</td>
-    <td>verify that the phone number is correct </td>
-  </tr>
-   <tr>
-    <td>isCodePostal</td>
-    <td>verify that the postal code is correct </td>
-  </tr>
-  
-  
-  </table>
