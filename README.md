@@ -1,53 +1,489 @@
-# DolarJS
-Simple  and Minimal Javascript  Framework
-# How to use
-## Input Verification
+# DolarJS Documentation
+<!-- # SpringJS --> 
+<small>
+	A simple and lightweight  javascript library easy to learn easy to use 
+</small>
 
-### available verification functions 
-<table>
-  <tr>
-    <th>function</th>
-    <th>description</th>
-  </tr>
-  <tr>
-    <td>isEmail</td>
-    <td>verify that email is correct </td>
-  </tr>
-    <tr>
-    <td>isPhone</td>
-    <td>verify that the phone number is correct </td>
-  </tr>
-   <tr>
-    <td>isCodePostal</td>
-    <td>verify that the postal code is correct </td>
-  </tr>
-  
-  
-  </table>
-
-> Example : Email Verification
+## Instalation
+you can include the javascript file inside  the head tag of your page
 ```html
-<!--- include javascript file --->
 <head>
-  <script src="dolarjs.js"></script>
+<script type="text/javascript" src="dolar.min.js"></script>
 </head>
+
 ```
-```javascript 
-let email = "mohamed@yahoo.com" ;
-let isValidEmail = $.reg.isEmail(email);
-if(isValidEmail){
-alert("your email is correct :-) ");
-}else{
-alert("error please enter a correct email !!");
+## Select Elements
+you can select on element  or more by like this :
+
+> index.html 
+```html
+...
+<input type="text" placeholder="email" />
+<input type="password" placeholder="password" />
+
+...
+```
+> script.js 
+
+```javascript
+
+$('input')  // select all inputs
+
+
+```
+
+if you want to select only one element you can use function at(index)
+
+```javascript
+
+
+$('input').at(0) // select input at index 0 (email input)
+
+$('input').at(1) // select  input at index 1 (password input)
+
+
+```
+
+## Add Events 
+
+you can add a custom event to a one or more elements
+$(element).addEvent(eventName,callbackFunction)
+
+
+> index.html
+```html
+<button>say welcome </button>
+<button>say goodbye </button>
+
+```
+> script.js
+
+```javascript
+/// add a click function to the first button 
+$('button').at(0).addEvent('click',function(){
+	alert('welcome')
+})
+/// add a click function to the second button 
+$('button').at(1).addEvent('click',function(){
+	alert('goodbye')
+})
+
+/// You can use all code in one line
+/// You can switch between selected element  by at function
+
+$('button').at(0).addEvent('click',function(){alert('welcome')}).at(1).addEvent('click',function(){alert('goodbye')})
+
+
+```
+
+
+## Switch between elements 
+
+
+you can switch between selected elements using change function see this example
+```html
+<button>say hello </button>
+<input type="checkbox"/>
+
+```
+without change function
+
+```javascript
+/// add a click function to the first button 
+$('button').addEvent('click',function(){
+	alert('hello')
+})
+/// add change function to checkbox input
+$('input').addEvent('click',function(){
+	alert('checkbox changed')
+})
+
+```
+
+with change function
+
+```javascript
+/// add a click function to the first button 
+$('button').addEvent('click',function(){
+	alert('hello')
+}).change('input').addEvent('change',function(){alert('checkbox changed')})
+
+```
+change allows you to switch between selected elements so you can write all your code inline
+
+
+
+### Hide or show or remove elements
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>hide()</td><td>hide the element </td>
+</tr>
+<tr>
+	<td>hideAfter(number)</td><td>hide the element after number of seconds </td>
+</tr>
+
+<tr>
+	<td>show()</td><td>show the element </td>
+</tr>
+<tr>
+	<td>showAfter(number)</td><td>show the element after number of seconds </td>
+</tr>
+<tr>
+	<td>remove()</td><td>remove the element from DOM </td>
+</tr>
+<tr>
+	<td>removeAfter(number)</td><td>remove the element from DOM after number of seconds </td>
+</tr>
+</table>
+
+
+
+example
+
+
+```html
+
+<h1>This text will hide directly (after 0s)</h1>
+<h1>this text will hide after 1 second</h1>
+<p style='opacity:0'>this text will be visible after 2 second and will be removed after 4 second </p>
+
+```
+
+```javascript
+
+$('h1').at(0).hide()
+$('h1').at(1).hideAfter(1000)
+$('p').showAfter(2000).removeAfter(4000)
+// or use inline syntax with at and change
+$('h1').at(0).hide().at(1).hideAfter(1000).change('p').showAfter(2000).removeAfter(4000)
+
+```
+
+
+
+
+### Dealing with element attributes
+
+
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>getAttribute('name')</td><td>returns the value of an attribute </td>
+</tr>
+<tr>
+	<td>setAttribute('name','value')</td><td>set attribute name to value </td>
+</tr>
+</table>
+
+```html
+
+<input type="text" placeholder="password" />
+<button>Hide / Show password</button>
+
+```
+
+```javascript
+
+$('button').addEvent('click',()=>{
+	let InputType = $('input').getAttribute('type')
+	if(InputType == "text"){
+		$('input').setAttribute('type','password')
+	}else{
+		$('input').setAttribute('type','text')
+	}
+})
+
+
+```
+
+
+
+
+
+### Dealing with element value
+
+
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>getValue()</td><td>returns the value of the element </td>
+</tr>
+<tr>
+	<td>saveValue('name')</td><td>save the element value as name </td>
+</tr>
+<tr>
+	<td>setValue('new value') </td><td>change the value of the element  </td>
+</tr>
+<tr>
+	<td>appendValue('new value') </td><td>add  the value to the old value of the element  </td>
+</tr>
+<tr>
+	<td>clearValue() </td><td>clear the value of the element  </td>
+</tr>
+</table>
+ 
+
+
+ > example 
+
+```html
+
+<input type="text" placeholder="firstname"/>
+<input type="text" placeholder="lastname"/>
+<input type="text"/>
+<button>click</button>
+
+```
+
+```javascript
+
+$('button').addEvent('click',()=>{
+	let FirstName = $('input').at(0).getValue();
+	let LastName = $('input').at(1).getValue();
+	let message = "Welcome " + FirstName +" " + LastName;
+	$('input')
+	.at(2).setValue(message)
+	.at(0).clearValue()
+	.at(1).clearValue();
+
+})
+
+
+```
+
+
+### Dealing with element content 
+
+
+
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>replaceHTML(html)</td><td>replace the element by a custom html code </td>
+</tr>
+<tr>
+	<td>replaceHTMLAfter(html,number) </td><td>replace the element by a custom html code after a number of seconds </td>
+</tr>
+<tr>
+	<td>replaceText(text)</td><td>replace the text Content of the element </td>
+</tr>
+<tr>
+	<td>replaceTextAfter(text,number) </td><td>replace the text Content of the element after a number of seconds </td>
+</tr>
+</table>
+ 
+
+  > example 
+
+```html
+
+<button>click</button>
+
+```
+
+```javascript
+
+$('button').addEvent('click',()=>{
+	
+	
+	 $('button')
+	 .replaceText('welcome !!!')
+	 .replaceTextAfter('Back !!!',2000)
+	 .replaceHTMLAfter('<h1>hello world </h1>',4000);
+
+})
+
+
+```
+
+
+### Dealing with element classNames
+
+
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>addClass(class)</td><td>add class to element</td>
+</tr>
+<tr>
+	<td>addClassAfter(class,number)</td><td>add class to element after a number of seconds</td>
+</tr>
+<tr>
+	<td>removeClass(class)</td><td>remove class from the element</td>
+</tr>
+<tr>
+	<td>removeClassAfter(class,number)</td><td>remove class from the element after a number of seconds</td>
+</tr>
+<tr>
+	<td>toggleClass(class)</td><td>remove class from the element if already exist and add it if not</td>
+</tr>
+
+</table>
+ 
+
+
+note you can pass  your custom css as an object but you need to use camelcase insteade of kababcase , so you need to use backgroundColor instead of background-color , and borderRadius insead of border-radius .
+
+
+   > example 
+
+```css
+.blue{
+	color:blue;
 }
 
 ```
+```html
+<h1>hello world </h1>
+<button>add class </button>
+<button>remove class </button>
+<button>toggle (add/remove)</button>
+```
 
-> Using other functions :
-```javascript 
-let isValidEmail = $.reg.isEmail("email@gmail.com");
-let isValidPhone = $.reg.isPhone("0612345678");
-let isCodePostal = $.reg.isCodePostal("23456");
+```javascript
+
+$('button')
+.at(0).addEvent('click',()=>{$('h1').addClass('blue')})
+.at(1).addEvent('click',()=>{$('h1').removeClass('blue')})
+.at(2).addEvent('click',()=>{$('h1').toggleClass('blue')})
+
+
 ```
 
 
+### Dealing with elements Styles
+
+
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+	<td>addCss({prop:'value'})</td><td>add css to element</td>
+</tr>
+<tr>
+	<td>addCssAfter({prop:'value'},number)</td><td>add css to element after a number of seconds</td>
+</tr>
+<tr>
+	<td>removeCss(prop)</td><td>remove css from the element</td>
+</tr>
+<tr>
+	<td>removeCssAfter(prop,number)</td><td>remove css from the element after a number of seconds</td>
+</tr>
+
+<tr>
+	<td>addTransition()</td><td>add a transition effect to the element</td>
+</tr>
+</table>
+ 
+
+
+
+   > example 
+
+
+note : you can call  addTransition function to add a transition effect while adding the css 
+this function will add a transition property with the default value of 'all 0.4s ease 0s' 
+you can change it by passing the transition value as a parameter like this addTransition('color 0.6s ease-in 0s');
+```html
+<h1>hello world </h1>
+<button>add css without addTransition </button>
+<button>add css with addTransition </button>
+
+
+```
+
+```javascript
+
+$('button').at(0).addEvent('click',()=>{
+	$('h1').addCss(
+	{
+		backgroundColor: 'blue' ,
+		color: 'white'
+	})
+
+}).at(1).addEvent('click',()=>{
+
+	/// add a custom ransition
+	$('h1').addTransition('background-color 0.6s ease-in-out 0s').addCss(
+	{
+		backgroundColor: 'green' ,
+		color: 'white'
+	})
+
+})
+
+
+
+```
+
+### addVerify function
+
+this function allows you to add a keyup event handler and each time when you change the value this function checks if the value of the input match the regular expression if true then add your custom success classname else add your custom error classname 
+> syntax 
+
+```javascript
+
+...addVerify(regExp,successClass , errorClass);
+
+```
+> example 
+
+
+
+create a success and error classNames 
+```css
+.success{
+	color:green;
+	border:2px solid green;
+}
+.error{
+	color:red;
+	border:2px solid red;
+}
+
+
+```
+
+```html
+<input type="password" placeholder="password" />
+
+
+```
+
+
+```javascript
+/// check if the length of the input is 8 at least
+$('input').addVerify(/^\w{8,}$/,'success','error');
+
+
+```
