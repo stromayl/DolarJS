@@ -1,6 +1,6 @@
 
 <center>
-	<img src="logo1.png" />
+	<img src="dolarjs.png" />
 </center>
 
 # DolarJS Documentation
