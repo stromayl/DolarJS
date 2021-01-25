@@ -1,7 +1,6 @@
 
-<center>
-	<img src="dolarjs.png" />
-</center>
+<img style='margin:0px auto' src="dolarjs.png" />
+
 
 # DolarJS Documentation
 <!-- # SpringJS --> 
