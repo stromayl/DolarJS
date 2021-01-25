@@ -1,3 +1,8 @@
+
+<center>
+	<img src="logo1.png" />
+</center>
+
 # DolarJS Documentation
 <!-- # SpringJS --> 
 <small>
@@ -280,10 +285,10 @@ $('button').addEvent('click',()=>{
 <th>Description</th>
 </tr>
 <tr>
-	<td>replaceHTML(html)</td><td>replace the element by a custom html code </td>
+	<td>outerHTML(html)</td><td>replace the element by a custom html code </td>
 </tr>
 <tr>
-	<td>replaceHTMLAfter(html,number) </td><td>replace the element by a custom html code after a number of seconds </td>
+	<td>outerHTMLAfter(html,number) </td><td>replace the element by a custom html code after a number of seconds </td>
 </tr>
 <tr>
 	<td>replaceText(text)</td><td>replace the text Content of the element </td>
@@ -310,7 +315,7 @@ $('button').addEvent('click',()=>{
 	 $('button')
 	 .replaceText('welcome !!!')
 	 .replaceTextAfter('Back !!!',2000)
-	 .replaceHTMLAfter('<h1>hello world </h1>',4000);
+	 .outerHTMLAfter('<h1>hello world </h1>',4000);
 
 })
 
