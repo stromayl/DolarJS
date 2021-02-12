@@ -16,7 +16,7 @@ you can include the javascript file inside  the head tag of your page
 ```html
 <head>
 ...
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mboussaid/dolarjs/dolarjs.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mboussaid/dolarjs/src/dolar.min.js"></script>
 ...
 </head>
 ```
